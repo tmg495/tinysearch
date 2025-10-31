@@ -75,11 +75,4 @@ async function rankSearchResults(index, query, searchResults) {
     return scoreTable;
 }
 
-
-// async function dummy() {
-//     let scoreTable = await rankSearchResults(null, 'poland', ['https://en.wikipedia.org/wiki/Bletchley_Park','https://en.wikipedia.org/wiki/Warsaw', 'https://en.wikipedia.org/wiki/Poland']);
-//     console.log(scoreTable)
-// }
-// dummy()
-
 module.exports = {searchPage, calcScore, rankSearchResults}

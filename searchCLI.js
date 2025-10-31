@@ -38,6 +38,6 @@ async function executeSearch(query, cb) {
     index = await crawl(startingUrl, index, crawlDepth);
     let searchResults = index.get(query);
     let rankedResults = await rankSearchResults(index, query, searchResults)
-    console.log(rankedResults[0][0])
+    console.log(`Term was found ${rankedResults[0][1]} times at ${rankedResults[0][0]}`)
     cb();
 }

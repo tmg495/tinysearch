@@ -1,28 +1,11 @@
-// import * as searchIndex from './searchIndex.js'
-// import * as winkNLP from 'wink-nlp';
-const {createIndex, addPageToIndex, updatePageInIndex} = require('./searchIndex')
+const {addPageToIndex, updatePageInIndex} = require('./searchIndex')
 const winkNLP = require('wink-nlp')
 const model = require('wink-eng-lite-web-model');
 const nlp = winkNLP(model);
 const its = nlp.its;
 const jsdom = require("jsdom")
 const { JSDOM } = jsdom;
-const nock = require('nock')
 const url = require('node:url');
-
-// const scope = nock('https://api.github.com')
-//   .get('/repos/atom/atom/license')
-//   .reply(200, {
-//     license: {
-//       key: 'mit',
-//       name: 'MIT License',
-//       spdx_id: 'MIT',
-//       url: 'https://api.github.com/licenses/mit',
-//       node_id: 'MDc6TGljZW5zZTEz',
-//     },
-//   })
-//   .get('/robots.txt')
-//   .reply(200,`User-Agent: *\nDisallow: /private`)
 
 async function searchPage(query, searchURL, onSuccess) {
     try {
@@ -120,6 +103,3 @@ async function checkRobots (checkURL) {
 }
 
 module.exports = {crawl}
-
-// let index = createIndex();
-// crawl('https://www.google.com', index, 3)
