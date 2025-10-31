@@ -1,0 +1,7 @@
+The search engine can be accessed by running searchCLI from the terminal. 
+Because this implementation doesn't store the search index, it can only 
+search a limited scope, starting from the site specified in executeSearch.
+The spider uses the parameters "crawlDepth" and "crawlBreadth" to control
+how thorough the search will be: the latter decides how many of the links
+the spider will check each time it crawls, and the former decides how many
+iterations it will go through.
